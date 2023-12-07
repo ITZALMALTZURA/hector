@@ -22,20 +22,7 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "email",
-						"value": "becario.sistemas@recargamax.com.mx",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "password",
-						"value": "RmX2019%Ss",
-						"type": "text",
-						"disabled": true
-					}
-				],
+				"header": [],
 				"url": "{{ip_server}}/token"
 			},
 			"response": []
