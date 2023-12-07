@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "d1a96d5a-77aa-4ad4-a680-bbcb5632cfe6",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21555950"
+	},
+	"item": [
+		{
+			"name": "_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"pm.globals.set('_api_token',res._token)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "becario.sistemas@recargamax.com.mx",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "RmX2019%Ss",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{ip_server}}/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "becario.sistemas@recargamax.com.mx",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "RmX2019%Ss",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "becario.sistemas@recargamax.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "RmX2019%Ss",
+							"type": "text"
+						},
+						{
+							"key": "_token",
+							"value": "{{_api_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{ip_server}}/api_login"
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta_users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-XSFK-TOKEN",
+						"value": "{!! csrf_field() !!}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{ip_server}}/consulta_users"
+			},
+			"response": []
+		},
+		{
+			"name": "consulta_user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{ip_server}}/consulta_user/4"
+			},
+			"response": []
+		},
+		{
+			"name": "nuevo_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "kelly",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "alomoto",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "7121340000",
+							"type": "text"
+						},
+						{
+							"key": "correo",
+							"value": "kelly@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "fotografia",
+							"value": "C:/Users/SIS03/Pictures/IMG/1673373573195.gif",
+							"type": "text"
+						},
+						{
+							"key": "permiso",
+							"value": "Basico",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "RmX2021",
+							"type": "text"
+						},
+						{
+							"key": "_token",
+							"value": "{{_api_token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{ip_server}}/nuevo_user"
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nombre",
+							"value": "kelly",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "alomoto",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "7121340000",
+							"type": "text"
+						},
+						{
+							"key": "correo",
+							"value": "kelly@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "fotografia",
+							"type": "file",
+							"src": "/C:/Users/SIS03/Pictures/IMG/1673373573195.gif"
+						},
+						{
+							"key": "permiso",
+							"value": "Basico",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "RmX2021",
+							"type": "text"
+						},
+						{
+							"key": "_token",
+							"value": "{{_api_token}}",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{ip_server}}/actualizar_user/4"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_token",
+							"value": "{{_api_token}}",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{ip_server}}/eliminar_user/4"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{ip_server}}/logout"
+			},
+			"response": []
+		}
+	]
+}
