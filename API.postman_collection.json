@@ -63,12 +63,12 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "becario.sistemas@recargamax.com",
+							"value": "kelly@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "RmX2019%Ss",
+							"value": "2014",
 							"type": "text"
 						},
 						{
@@ -78,7 +78,7 @@
 						}
 					]
 				},
-				"url": "{{ip_server}}/api_login"
+				"url": "{{ip_server}}/login"
 			},
 			"response": []
 		},
@@ -147,7 +147,7 @@
 						},
 						{
 							"key": "password",
-							"value": "RmX2021",
+							"value": "2014",
 							"type": "text"
 						},
 						{
@@ -192,7 +192,7 @@
 						{
 							"key": "fotografia",
 							"type": "file",
-							"src": "/C:/Users/SIS03/Pictures/IMG/1673373573195.gif"
+							"src": "/C:/Users/SIS03/Pictures/IMG/partenondeatenea.jpg"
 						},
 						{
 							"key": "permiso",
@@ -201,7 +201,7 @@
 						},
 						{
 							"key": "password",
-							"value": "RmX2021",
+							"value": "2014",
 							"type": "text"
 						},
 						{
